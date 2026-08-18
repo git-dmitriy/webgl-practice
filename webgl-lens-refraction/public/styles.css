@@ -1,0 +1,314 @@
+@import url("/fonts.css");
+
+:root {
+    --color-bg: #ede6da;
+    --color-text: #3c3530;
+    --color-accent: #8b5a3c;
+    --color-selection: rgba(139, 90, 60, 0.35);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-display: block;
+    overscroll-behavior: contain;
+    font-size: max(0.75rem, 0.8101851852vw);
+
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+::selection {
+    background: var(--color-selection);
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+    inline-size: 100%;
+    min-height: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-inline-start: max(1.2rem, 40 / 1440 * 100vw);
+    padding-inline-end: max(1.2rem, 40 / 1440 * 100vw);
+}
+
+section {
+    margin: max(5px, 5vw) 0;
+}
+
+header {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    padding-block: max(1.25rem, 8vw);
+    margin-block-end: max(2.5rem, 5vw);
+}
+
+.hero {
+    position: relative;
+}
+
+h2 {
+    font-size: max(3.75rem, 187 / 1440 * 100vw);
+    font-weight: 600;
+    line-height: .8;
+    letter-spacing: -0.03em;
+    margin: 0;
+    margin-inline-start: -0.07em;
+}
+
+.hero__lede {
+    font-weight: 400;
+    font-size: max(14px, calc(14 / 1440 * 100vw));
+    display: block;
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin-block-start: 2.5rem;
+    inline-size: 80%;
+    margin-inline-start: 0;
+}
+
+@media screen and (min-width: 64em) {
+    .hero__lede {
+        position: absolute;
+        inset-inline-start: 70%;
+        inset-block-end: 1.5%;
+        inline-size: max(300px, 22vw);
+        block-size: auto;
+        inset-block-start: 0;
+        display: block;
+    }
+}
+
+footer {
+    margin: 0;
+}
+
+h3 {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.2;
+    font-size: max(2rem, 64 / 1440 * 100vw);
+    margin: 10vw 0;
+}
+
+h3 span {
+    inline-size: 80%;
+}
+
+h3 em {
+    text-align: right;
+    display: block;
+    margin-block-start: 2.5rem;
+}
+
+h3 em span {
+    margin-inline-start: auto;
+}
+
+@media screen and (min-width: 35em) {
+    h3 em {
+        margin-block-start: 0;
+    }
+}
+
+.lede {
+    font-weight: 400;
+    font-size: max(1rem, 36 / 1440 * 100vw);
+    line-height: 1.36;
+    margin: max(5rem, 200 / 1440 * 100vw) 0;
+    inline-size: 77%;
+}
+
+@media (min-width: 400px) {
+    .lede {
+        margin-inline-start: 0;
+        inline-size: 77%;
+    }
+}
+
+p {
+    margin-block-start: max(5rem, 5vw);
+}
+
+@media (min-width: 400px) {
+    p {
+        margin-inline-start: 50%;
+        inline-size: max(200px, 22vw);
+    }
+}
+
+.figure-cube {
+    aspect-ratio: 16/10;
+    inline-size: 66%;
+    margin: auto;
+}
+
+.figure-landscape {
+    aspect-ratio: 16/9;
+}
+
+.pair {
+    display: flex;
+    margin: max(5rem, 300 / 1440 * 100vw) 0;
+}
+
+.figure-wide {
+    aspect-ratio: 16/11;
+    inline-size: 50%;
+}
+
+.figure-narrow {
+    aspect-ratio: 9/13;
+    inline-size: 18%;
+    margin: auto;
+}
+
+img {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    inline-size: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.site-header {
+    position: relative;
+    z-index: 1;
+    inline-size: 100%;
+    min-height: 5vh;
+    padding-block-start: max(1.2rem, 24 / 1440 * 100vw);
+    padding-block-end: max(1rem, 20 / 1440 * 100vw);
+}
+
+.site-header > * {
+    margin: 0;
+}
+
+@media screen and (min-width: 45em) {
+    .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1.5rem;
+    }
+}
+
+.site-header a {
+    pointer-events: auto;
+}
+
+.site-header__brand {
+    display: flex;
+}
+
+.site-header__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-header__title,
+.site-header__link {
+    font-family: "Poppins", sans-serif;
+    font-size: max(0.75rem, 12 / 1440 * 100vw);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.site-header__title {
+    margin: 0;
+}
+
+.site-header__github {
+    display: flex;
+    color: var(--color-text);
+    transition: color 0.2s ease;
+}
+
+.site-header__github svg {
+    inline-size: 1.1rem;
+    block-size: 1.1rem;
+}
+
+.site-header__github:hover {
+    color: var(--color-accent);
+}
+
+.site-header__link {
+    color: var(--color-text);
+    transition: color 0.2s ease;
+}
+
+.site-header__link:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.site-footer {
+    position: relative;
+    z-index: 1;
+    padding-block-start: max(2.5rem, 20vw);
+    padding-block-end: max(2rem, 8vw);
+}
+
+.site-footer__credit {
+    margin: 0;
+    max-inline-size: 36em;
+    font-size: max(14px, calc(14 / 1440 * 100vw));
+    line-height: 1.5;
+}
+
+.site-footer__credit {
+    margin-block-start: 1.25rem;
+}
+
+.site-footer a {
+    pointer-events: auto;
+}
+
+.site-footer__link {
+    font-family: "Poppins", sans-serif;
+    font-size: max(1rem, 18 / 1440 * 100vw);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--color-text);
+    transition: color 0.2s ease;
+}
+
+.site-footer__link:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+}
