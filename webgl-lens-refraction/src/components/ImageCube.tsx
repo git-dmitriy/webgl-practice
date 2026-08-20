@@ -68,14 +68,16 @@ function WebGLCube({img, scale, inViewport}: WebGLCubeProps) {
         material.factor *= 0.95
     })
 
-    const spring = useSpring({
-        scale: inViewport ? scale.times(1) : scale.times(0),
+    const {sx, sy, sz} = useSpring({
+        sx: inViewport ? scale.x : 0,
+        sy: inViewport ? scale.y : 0,
+        sz: inViewport ? scale.z : 0,
         config: inViewport ? config.wobbly : config.stiff,
         delay: inViewport ? 200 : 0,
     })
 
     return (
-        <a.mesh ref={mesh} {...spring}>
+        <a.mesh ref={mesh} scale-x={sx} scale-y={sy} scale-z={sz}>
             <boxGeometry args={[1, 1, 0.5, 64, 64]}/>
             <MeshWobbleMaterial
                 factor={0}
